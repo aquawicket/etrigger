@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="bench">
+</Property><Property Name="Solution File" Value="G:\fftw-3.1.2-vs2003\fftw-3.1.2\win32\bench.sln">
+</Property><Property Name="Date" Value="Tuesday, April 22, 2008">
+</Property><Property Name="Time" Value="12:01 PM">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="bench.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="bench.sln" Description="Converted">
+</Event></UpgradeLog>

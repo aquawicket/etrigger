@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="list.c" server="www.edrummonitor.com" local="128512141800000000" remote="128513164800000000" />
+<file name="list.h" server="www.edrummonitor.com" local="128512141800000000" remote="128513164800000000" />
+<file name="midi.c" server="www.edrummonitor.com" local="128512141800000000" remote="128513164800000000" />
+<file name="midi.h" server="www.edrummonitor.com" local="128512141800000000" remote="128513164800000000" />
+<file name="midi_alsa_raw.c" server="www.edrummonitor.com" local="128512141800000000" remote="128513164800000000" />
+<file name="midi_alsa_seq.c" server="www.edrummonitor.com" local="128512141800000000" remote="128513164800000000" />
+<file name="midi_driver.c" server="www.edrummonitor.com" local="128512141800000000" remote="128513164800000000" />
+<file name="midi_driver.h" server="www.edrummonitor.com" local="128512141800000000" remote="128513164800000000" />
+<file name="midi_event.c" server="www.edrummonitor.com" local="128512141800000000" remote="128513164800000000" />
+<file name="midi_event.h" server="www.edrummonitor.com" local="128512141800000000" remote="128513164800000000" />
+<file name="midi_file.c" server="www.edrummonitor.com" local="128512141800000000" remote="128513164800000000" />
+<file name="midi_file.h" server="www.edrummonitor.com" local="128512141800000000" remote="128513164800000000" />
+<file name="midi_parser.c" server="www.edrummonitor.com" local="128512141800000000" remote="128513164800000000" />
+<file name="midi_parser.h" server="www.edrummonitor.com" local="128512141800000000" remote="128513164800000000" />
+<file name="midi_player.c" server="www.edrummonitor.com" local="128512142400000000" remote="128513165400000000" />
+<file name="midi_player.h" server="www.edrummonitor.com" local="128512142400000000" remote="128513165400000000" />
+<file name="midi_track.c" server="www.edrummonitor.com" local="128512142400000000" remote="128513165400000000" />
+<file name="midi_track.h" server="www.edrummonitor.com" local="128512142400000000" remote="128513165400000000" />
+<file name="timer.c" server="www.edrummonitor.com" local="128512142400000000" remote="128513165400000000" />
+<file name="timer.h" server="www.edrummonitor.com" local="128512142400000000" remote="128513165400000000" />
+</dwsync>

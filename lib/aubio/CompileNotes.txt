@@ -1,0 +1,10 @@
+Aubio - Cmake Notes
+-------------------
+
+Changes to make
+----------------
+*Ignore Libc.lib Library      ( Linker->Input->Ignore Spacific Library )
+*Compile As C++ Code          ( C/C++->Advanced->Compile As )
+*Compile Statically           ( C/C++->Code Generation->Runtime Library)
+*Add test-onsetdetectin.c to project
+*Add Libirc.lib to project

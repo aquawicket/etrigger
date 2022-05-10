@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="Makefile.am" server="www.edrummonitor.com" local="128512141200000000" remote="128513164200000000" />
+<file name="Makefile.in" server="www.edrummonitor.com" local="128512141200000000" remote="128513164200000000" />
+<file name="test-beattracking.c" server="www.edrummonitor.com" local="128512141200000000" remote="128513164200000000" />
+<file name="test-biquad.c" server="www.edrummonitor.com" local="128512141200000000" remote="128513164800000000" />
+<file name="test-fft.c" server="www.edrummonitor.com" local="128512141200000000" remote="128513164800000000" />
+<file name="test-filter.c" server="www.edrummonitor.com" local="128512141200000000" remote="128513164800000000" />
+<file name="test-hist.c" server="www.edrummonitor.com" local="128512141200000000" remote="128513164800000000" />
+<file name="test-mfft.c" server="www.edrummonitor.com" local="128512141200000000" remote="128513164800000000" />
+<file name="test-onset.c" server="www.edrummonitor.com" local="128512141200000000" remote="128513164800000000" />
+<file name="test-onsetdetection.c" server="www.edrummonitor.com" local="128512141200000000" remote="128513164800000000" />
+<file name="test-peakpick.c" server="www.edrummonitor.com" local="128512141200000000" remote="128513164800000000" />
+<file name="test-phasevoc-jack.c" server="www.edrummonitor.com" local="128512141200000000" remote="128513164800000000" />
+<file name="test-phasevoc.c" server="www.edrummonitor.com" local="128512141200000000" remote="128513164800000000" />
+<file name="test-pitchdetection.c" server="www.edrummonitor.com" local="128512141200000000" remote="128513164800000000" />
+<file name="test-pitchfcomb.c" server="www.edrummonitor.com" local="128512141200000000" remote="128513164800000000" />
+<file name="test-pitchmcomb.c" server="www.edrummonitor.com" local="128512141200000000" remote="128513164800000000" />
+<file name="test-pitchschmitt.c" server="www.edrummonitor.com" local="128512141200000000" remote="128513164800000000" />
+<file name="test-pitchyin.c" server="www.edrummonitor.com" local="128512141200000000" remote="128513164800000000" />
+<file name="test-pitchyinfft.c" server="www.edrummonitor.com" local="128512141200000000" remote="128513164800000000" />
+<file name="test-resample.c" server="www.edrummonitor.com" local="128512141200000000" remote="128513164800000000" />
+<file name="test-sample.c" server="www.edrummonitor.com" local="128512141200000000" remote="128513164800000000" />
+<file name="test-scale.c" server="www.edrummonitor.com" local="128512141200000000" remote="128513164800000000" />
+<file name="test-tempo.c" server="www.edrummonitor.com" local="128512141200000000" remote="128513164800000000" />
+<file name="test-tss.c" server="www.edrummonitor.com" local="128512141200000000" remote="128513164800000000" />
+<file name="test-window.c" server="www.edrummonitor.com" local="128512141200000000" remote="128513164800000000" />
+</dwsync>

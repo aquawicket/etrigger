@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="add.c" server="www.edrummonitor.com" local="128080375320000000" remote="128513204400000000" />
+<file name="ChangeLog" server="www.edrummonitor.com" local="128080375320000000" remote="128513205000000000" />
+<file name="code.c" server="www.edrummonitor.com" local="128080375320000000" remote="128513205000000000" />
+<file name="config.h" server="www.edrummonitor.com" local="128080375320000000" remote="128513205000000000" />
+<file name="COPYRIGHT" server="www.edrummonitor.com" local="128080375320000000" remote="128513205000000000" />
+<file name="decode.c" server="www.edrummonitor.com" local="128080375320000000" remote="128513205000000000" />
+<file name="gsm.h" server="www.edrummonitor.com" local="128080375320000000" remote="128513205000000000" />
+<file name="gsm610_priv.h" server="www.edrummonitor.com" local="128080375320000000" remote="128513205000000000" />
+<file name="gsm_create.c" server="www.edrummonitor.com" local="128080375320000000" remote="128513205000000000" />
+<file name="gsm_decode.c" server="www.edrummonitor.com" local="128080375320000000" remote="128513205000000000" />
+<file name="gsm_destroy.c" server="www.edrummonitor.com" local="128080375320000000" remote="128513205000000000" />
+<file name="gsm_encode.c" server="www.edrummonitor.com" local="128080375320000000" remote="128513205000000000" />
+<file name="gsm_option.c" server="www.edrummonitor.com" local="128080375320000000" remote="128513205000000000" />
+<file name="long_term.c" server="www.edrummonitor.com" local="128080375320000000" remote="128513205000000000" />
+<file name="lpc.c" server="www.edrummonitor.com" local="128080375320000000" remote="128513205000000000" />
+<file name="Makefile.am" server="www.edrummonitor.com" local="128080375320000000" remote="128513205000000000" />
+<file name="Makefile.in" server="www.edrummonitor.com" local="128080375320000000" remote="128513205000000000" />
+<file name="preprocess.c" server="www.edrummonitor.com" local="128080375320000000" remote="128513205000000000" />
+<file name="README" server="www.edrummonitor.com" local="128080375320000000" remote="128513205000000000" />
+<file name="rpe.c" server="www.edrummonitor.com" local="128080375320000000" remote="128513205000000000" />
+<file name="short_term.c" server="www.edrummonitor.com" local="128080375320000000" remote="128513205000000000" />
+<file name="table.c" server="www.edrummonitor.com" local="128080375320000000" remote="128513205000000000" />
+</dwsync>

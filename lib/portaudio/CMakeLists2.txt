@@ -1,0 +1,267 @@
+#################################
+####       PortAudio         ####
+#################################
+
+###### Supported Compilers ######
+#
+# Visual Studio 8 2005
+# Visual Studio 9 2008
+# Visual Studio 10 2010
+# Xcode
+# KDevelop 3.5
+
+cmake_minimum_required(VERSION 2.4)
+
+if(COMMAND cmake_policy)
+	cmake_policy(SET CMP0003 NEW)
+endif(COMMAND cmake_policy)
+
+SET(CMAKE_FIND_LIBRARY_PREFIXES "")
+SET(CMAKE_FIND_LIBRARY_SUFFIXES ".lib")
+
+SET(CMAKE_CONFIGURATION_TYPES Debug Release CACHE TYPE INTERNAL FORCE )
+
+PROJECT( PortAudio )
+
+INCLUDE_DIRECTORIES( ${PortAudio_SOURCE_DIR} )
+
+##------------------------------------------------
+##  portaudio.lib
+##------------------------------------------------
+SET(portaudio_SRCS
+build/msvc/portaudio.def
+src/common/pa_util.h
+src/common/pa_allocation.c
+src/common/pa_converters.c
+src/common/pa_cpuload.c
+src/common/pa_debugprint.c
+src/common/pa_dither.c
+src/common/pa_front.c
+src/common/pa_process.c
+src/common/pa_skeleton.c
+src/common/pa_stream.c
+src/common/pa_trace.c
+src/common/pa_ringbuffer.c
+src/hostapi/asio/pa_asio.cpp
+src/hostapi/asio/ASIOSDK2/common/asio.cpp
+src/hostapi/asio/ASIOSDK2/common/combase.cpp
+src/hostapi/asio/ASIOSDK2/common/debugmessage.cpp
+src/hostapi/asio/ASIOSDK2/common/register.cpp
+src/hostapi/asio/ASIOSDK2/host/ASIOConvertSamples.cpp
+src/hostapi/asio/ASIOSDK2/host/asiodrivers.cpp
+src/hostapi/asio/ASIOSDK2/host/pc/asiolist.cpp
+src/hostapi/dsound/pa_win_ds.c
+src/hostapi/dsound/pa_win_ds_dynlink.c
+src/hostapi/wasapi/pa_win_wasapi.cpp
+src/hostapi/wmme/pa_win_wmme.c
+src/os/win/pa_win_hostapis.c
+src/os/win/pa_win_util.c
+src/os/win/pa_win_waveformat.c
+src/os/win/pa_win_wdmks_utils.c
+src/os/win/pa_x86_plain_converters.c
+)
+
+SOURCE_GROUP("Resource Files" FILES
+build/msvc/portaudio.def
+)
+	
+SOURCE_GROUP("Source Files\\common" FILES
+src/common/pa_util.h
+src/common/pa_allocation.c
+src/common/pa_converters.c
+src/common/pa_cpuload.c
+src/common/pa_debugprint.c
+src/common/pa_dither.c
+src/common/pa_front.c
+src/common/pa_process.c
+src/common/pa_skeleton.c
+src/common/pa_stream.c
+src/common/pa_trace.c
+)
+	
+SOURCE_GROUP("Source Files\\hostapi\\ASIO" FILES
+src/hostapi/asio/pa_asio.cpp
+)
+
+SOURCE_GROUP("Source Files\\hostapi\\ASIO\\ASIOSDK" FILES
+src/hostapi/asio/ASIOSDK2/common/asio.cpp
+src/hostapi/asio/ASIOSDK2/host/ASIOConvertSamples.cpp
+src/hostapi/asio/ASIOSDK2/host/asiodrivers.cpp
+src/hostapi/asio/ASIOSDK2/host/pc/asiolist.cpp
+src/hostapi/asio/ASIOSDK2/common/combase.cpp
+src/hostapi/asio/ASIOSDK2/common/debugmessage.cpp
+src/hostapi/asio/ASIOSDK2/common/register.cpp
+)
+
+SOURCE_GROUP("Source Files\\hostapi\\dsound" FILES
+src/hostapi/dsound/pa_win_ds.c
+src/hostapi/dsound/pa_win_ds_dynlink.c
+)
+
+SOURCE_GROUP("Source Files\\hostapi\\wasapi" FILES
+src/hostapi/wasapi/pa_win_wasapi.cpp
+)
+	
+SOURCE_GROUP("Source Files\\hostapi\\wmme" FILES
+src/hostapi/wmme/pa_win_wmme.c
+)
+	
+SOURCE_GROUP("Source Files\\os\\win" FILES
+src/os/win/pa_win_hostapis.c
+src/os/win/pa_win_util.c
+src/os/win/pa_win_waveformat.c
+src/os/win/pa_win_wdmks_utils.c
+src/os/win/pa_x86_plain_converters.c
+)
+   
+##--------------------------------------------------
+##       ###### WINDOWS ######
+##--------------------------------------------------
+IF(WIN32)
+   	
+	MESSAGE("Detected WINDOWS environment")
+
+	IF(CMAKE_CXX_COMPILER MATCHES cl)
+
+	##### Microsoft Visual Studio 2005 options #####
+	IF(CMAKE_GENERATOR STREQUAL "Visual Studio 8 2005")
+		SET(CMAKE_CXX_FLAGS "/nologo /W3 /Gy /Wp64")
+		SET(CMAKE_CXX_FLAGS_DEBUG "/MTd /Z7 /Od /EHsc /Wp64")
+		SET(CMAKE_CXX_FLAGS_RELEASE "/MT /Z7 /DEBUG /O2 /EHsc /bigobj /Wp64")
+		SET(CMAKE_CXX_FLAGS_MINSIZEREL "/MT /O2 /EHsc /Wp64")
+		SET(CMAKE_CXX_FLAGS_RELWITHDEBINFO "/MTd /Z7 /Od /EHsc /Wp64")
+			
+		### Use precompiled Headers ###
+		#SET_SOURCE_FILES_PROPERTIES(stdwx.cpp PROPERTIES COMPILE_FLAGS "/Ycstdwx.h")
+	ENDIF(CMAKE_GENERATOR STREQUAL "Visual Studio 8 2005")
+
+	##### Microsoft Visual Studio 2008 options #####
+	IF(CMAKE_GENERATOR STREQUAL "Visual Studio 9 2008")
+        	SET(CMAKE_CXX_FLAGS "/nologo /W3 /Gy")
+        	SET(CMAKE_CXX_FLAGS_DEBUG "/MTd /Z7 /Od /EHsc")
+        	SET(CMAKE_CXX_FLAGS_RELEASE "/MT /Z7 /DEBUG /O2 /EHsc /bigobj")
+       		SET(CMAKE_CXX_FLAGS_MINSIZEREL "/MT /O2 /EHsc")
+       		SET(CMAKE_CXX_FLAGS_RELWITHDEBINFO "/MTd /Z7 /Od /EHsc")
+
+		### Use precompiled Headers ###
+		#SET_SOURCE_FILES_PROPERTIES(stdwx.cpp PROPERTIES COMPILE_FLAGS "/Ycstdwx.h")
+	ENDIF(CMAKE_GENERATOR STREQUAL "Visual Studio 9 2008")
+
+	##### Microsoft Visual Studio 2010 options #####
+	IF(CMAKE_GENERATOR STREQUAL "Visual Studio 10")
+        	SET(CMAKE_CXX_FLAGS "/nologo /W3 /Gy")
+        	SET(CMAKE_CXX_FLAGS_DEBUG "/MTd /Z7 /Od /EHsc")
+        	SET(CMAKE_CXX_FLAGS_RELEASE "/MT /Z7 /DEBUG /O2 /EHsc /bigobj")
+       		SET(CMAKE_CXX_FLAGS_MINSIZEREL "/MT /O2 /EHsc")
+       		SET(CMAKE_CXX_FLAGS_RELWITHDEBINFO "/MTd /Z7 /Od /EHsc")
+
+		### Use precompiled Headers ###
+		#SET_SOURCE_FILES_PROPERTIES(stdwx.cpp PROPERTIES COMPILE_FLAGS "/Ycstdwx.h")
+	ENDIF(CMAKE_GENERATOR STREQUAL "Visual Studio 10")
+	
+	ENDIF(CMAKE_CXX_COMPILER MATCHES cl)
+
+   	SET(EXECUTABLE_OUTPUT_PATH ${PortAudio_SOURCE_DIR}/../../_WIN32
+            CACHE PATH "Single output directory for building all executables.")
+	SET(LIBRARY_OUTPUT_PATH ${PortAudio_SOURCE_DIR}/../../_WIN32
+            CACHE PATH "Single output directory for building all libraries.")
+
+	ADD_DEFINITIONS(-DWIN32)
+    ADD_DEFINITIONS(-DPAWIN_USE_WDMKS_DEVICE_INFO)
+
+	INCLUDE_DIRECTORIES($ENV{DXSDK_DIR}/Include )
+	INCLUDE_DIRECTORIES($ENV{DXSDK_DIR}/Lib/x86 )
+	INCLUDE_DIRECTORIES($ENV{WINSDK}/Include )
+	INCLUDE_DIRECTORIES(${PortAudio_SOURCE_DIR})
+	INCLUDE_DIRECTORIES(${PortAudio_SOURCE_DIR}/include )
+	INCLUDE_DIRECTORIES(${PortAudio_SOURCE_DIR}/src/common )
+	INCLUDE_DIRECTORIES(${PortAudio_SOURCE_DIR}/src/os/win )
+	INCLUDE_DIRECTORIES(${PortAudio_SOURCE_DIR}/src/hostapi/asio/ASIOSDK2/common )
+	INCLUDE_DIRECTORIES(${PortAudio_SOURCE_DIR}/src/hostapi/asio/ASIOSDK2/host )
+	INCLUDE_DIRECTORIES(${PortAudio_SOURCE_DIR}/src/hostapi/asio/ASIOSDK2/host/pc )
+	
+	##------ portaudio -----------------------------------------------------------------------------
+	ADD_LIBRARY(lib-portaudio STATIC ${portaudio_SRCS})
+	SET_TARGET_PROPERTIES(lib-portaudio PROPERTIES LINKER_LANGUAGE CXX OUTPUT_NAME portaudio DEBUG_OUTPUT_NAME 	portaudio_d)
+	##-------------------------------------------------------------------------------------------------
+
+ENDIF(WIN32)
+##--------------------------------------------
+
+    
+
+
+##----------------------------------------
+##        ##### MAC #####
+##----------------------------------------
+IF (APPLE)
+
+	MESSAGE("Detected MAC environment")
+
+	SET(EXECUTABLE_OUTPUT_PATH ${PortAudio_SOURCE_DIR}/../../_MAC
+		CACHE PATH "Single output directory for building all executables.")
+	SET(LIBRARY_OUTPUT_PATH ${PortAudio_SOURCE_DIR}/../../_MAC
+		CACHE PATH "Single output directory for building all libraries.")
+
+	INCLUDE_DIRECTORIES(${PortAudio_SOURCE_DIR})
+	INCLUDE_DIRECTORIES(${PortAudio_SOURCE_DIR}/include )
+	INCLUDE_DIRECTORIES(${PortAudio_SOURCE_DIR}/src/common )
+	INCLUDE_DIRECTORIES(${PortAudio_SOURCE_DIR}/src/os/win )
+	INCLUDE_DIRECTORIES(${PortAudio_SOURCE_DIR}/src/hostapi/asio/ASIOSDK2/common )
+	INCLUDE_DIRECTORIES(${PortAudio_SOURCE_DIR}/src/hostapi/asio/ASIOSDK2/host )
+	INCLUDE_DIRECTORIES(${PortAudio_SOURCE_DIR}/src/hostapi/asio/ASIOSDK2/host/pc )
+
+	FIND_LIBRARY(COREAUDIO_LIBRARY CoreAudio)
+	FIND_LIBRARY(COREFOUNDATION_LIBRARY CoreFoundation )
+	FIND_LIBRARY(AUDIOTOOLBOX_LIBRARY AudioToolbox )
+	FIND_LIBRARY(AUDIOUNIT_LIBRARY AudioUnit )
+
+	ADD_DEFINITIONS(-DMAC)
+
+	##------ portaudio ---------------------------------------------------------
+	ADD_LIBRARY(lib-portaudio STATIC ${portaudio_SRCS})
+	SET_TARGET_PROPERTIES(lib-portaudio PROPERTIES LINKER_LANGUAGE CXX OUTPUT_NAME portaudio DEBUG_OUTPUT_NAME portaudio_d) 
+	##---------------------------------------------------------------------------
+
+ENDIF (APPLE)
+##--------------------------------------------
+
+
+
+
+
+##----------------------------------------
+##        ##### LINUX #####
+##----------------------------------------
+IF (UNIX)
+IF (!APPLE)
+
+	MESSAGE("Detected LINUX environment")
+
+	SET(EXECUTABLE_OUTPUT_PATH ${PortAudio_SOURCE_DIR}/../../_LINUX
+		CACHE PATH "Single output directory for building all executables.")
+	SET(LIBRARY_OUTPUT_PATH ${PortAudio_SOURCE_DIR}/../../_LINUX
+		CACHE PATH "Single output directory for building all libraries.")
+
+	INCLUDE_DIRECTORIES(${PortAudio_SOURCE_DIR})
+	INCLUDE_DIRECTORIES(${PortAudio_SOURCE_DIR}/include )
+	INCLUDE_DIRECTORIES(${PortAudio_SOURCE_DIR}/src/common )
+	INCLUDE_DIRECTORIES(${PortAudio_SOURCE_DIR}/src/os/win )
+	INCLUDE_DIRECTORIES(${PortAudio_SOURCE_DIR}/src/hostapi/asio/ASIOSDK2/common )
+	INCLUDE_DIRECTORIES(${PortAudio_SOURCE_DIR}/src/hostapi/asio/ASIOSDK2/host )
+	INCLUDE_DIRECTORIES(${PortAudio_SOURCE_DIR}/src/hostapi/asio/ASIOSDK2/host/pc )
+	
+    FIND_LIBRARY(ASOUND_LIBRARY asound)
+
+	ADD_DEFINITIONS(-DLINUX)
+	ADD_DEFINITIONS(-D__WXGTK__)
+	ADD_DEFINITIONS(-D__LINUX_ALSASEQ__)
+
+	##------ portaudio ---------------------------------------------------------
+	ADD_LIBRARY(lib-portaudio STATIC ${portaudio_SRCS})
+	SET_TARGET_PROPERTIES(lib-portaudio PROPERTIES LINKER_LANGUAGE CXX OUTPUT_NAME portaudio DEBUG_OUTPUT_NAME portaudio_d) 
+	##---------------------------------------------------------------------------
+
+ENDIF (!APPLE)
+ENDIF (UNIX)
+##--------------------------------------------
