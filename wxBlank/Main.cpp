@@ -1,0 +1,45 @@
+//// Main.cpp ///////////////////////////////////////////////////////////
+//
+//
+////////////////////////////////////////////////////////////////////////////
+
+#include "main.h"
+
+// MyFrame ////////////////////////////////
+BEGIN_EVENT_TABLE(MyFrame, wxFrame)
+
+END_EVENT_TABLE() 
+
+///////////////////////////////////////////////////////
+MyFrame::MyFrame(wxFrame *frame, const wxString& title) 
+		: wxFrame(frame, -1, title, wxDefaultPosition, wxSize(800, 600), wxDEFAULT_FRAME_STYLE )
+{ 
+#ifdef WIN32
+	SetIcon(wxICON(APPICON));
+#endif
+}
+
+///////////////////
+MyFrame::~MyFrame() 
+{ 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

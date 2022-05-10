@@ -1,0 +1,25 @@
+//// Main.h /////////////////////////////////////////////////////////////////////////////
+//
+//
+/////////////////////////////////////////////////////////////////////////////////////////
+
+#ifndef MAIN_H
+#define MAIN_H
+
+#include <wx/frame.h>
+#include "MainPanel.h"
+
+
+class MainPanel;
+
+//////////////////////////////
+class MyFrame: public wxFrame 
+{ 
+	public: 
+		MyFrame(wxFrame *frame, const wxString& title); 
+		~MyFrame(); 
+
+		MainPanel *mainPanel;
+};
+
+#endif //MAIN_H
