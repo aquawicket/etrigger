@@ -1,0 +1,18 @@
+//// App.cpp ////////////////////////////////////////////////////////
+//
+//////////////////////////////////////////////////////////////////////
+
+#include "App.h" 
+
+IMPLEMENT_APP(MyApp); 
+
+bool MyApp::OnInit()
+{ 
+	MyFrame *frame = new MyFrame();
+
+	frame->Show(true);
+	SetTopWindow(frame);
+
+	return true;
+}
+ 
