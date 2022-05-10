@@ -1,0 +1,140 @@
+eTrigger.txt
+------------
+
+NOTES
+-----
+
+BUGS-WIN32
+----------
+*The more classes we can make static.. the better. 
+
+*AudioProc is opening 3 Threads !!!
+
+*There are complications with registry reading and writing under vista.  wxWidgets related.
+
+*Audio Gains are global, if the input is used again on another track, it is effected by the eariler audio Pre-Gains.
+
+*Can't open ASIO Input and Output at the same time. They may need to be in the same callback.
+
+*GNumberBox objects are generating 2 extra MouseWheel events into the wxApp Filter Event.
+
+*The piano should not be allowed to resize past the end of the last key. 
+
+*When a line is horizontally flat on the Dynamic grid, we cannot add a point.
+
+*keyboard up and down are to slow for GKnob, use better math to make 1 key press equal 1 increment of change.
+
+
+BUGS-MAC
+--------
+*The GScrollBar doesn't work correctly on mac.
+
+*The StatusDialog Does Not Scroll Down
+
+*wxListBox SetBackground Colour does not work
+
+*learning inputs crashes.
+
+*SetForegroundColour does not work for TEXTEDIT class.
+
+*SetBackgroundColour does not work for wxDialogs.
+
+*GetScreenPosition() does not work on MAC and causes problems in lots of areas.
+
+*File saving and loading is not working
+
+
+BUGS-LINUX
+----------
+*crypto not compiling.
+
+*deleting tracks from right-click popup menu causes seg fault crash.
+
+*GImageSelector not working.
+
+*GScrollBar not working.
+
+
+TODO LIST
+---------
+*When opening midi devices, it MidiYokeNT or Loopbe or Maple output devices don't show up, warn about not having a virtual midi driver for output, Show links for suggestions, and allow  person to select "don't show me this warning again".  
+
+*create new option in options menu for showing on off status of comfrimations. I.E. all the don't show me or don't warn me again popups.  Allow them to be turned back on from here. other  I.E.  version notes, delete track comfirmation, etc.
+
+*Try making the black line spacing of GMeter smaller, make it adjustable at least though easy variable changing.
+
+*Work with reading and writing files, see what the hell is going on there.
+
+*See if we can get left click track draging to work.
+
+*Finnish working on crosstalk. There should be a global setting for crosstalk wait time as well.
+
+*Start working on aftertouch
+
+*We need a full 2 way rockband style interface. We want to be able to play along with songs with or with out the drums playing along, Listen to the drums being played with the song, Listen  to the songs drums only. Be able to adjust the volume of the song and the drums. Lots of work to be done here.
+	
+	*Needs to be different modes. 
+	
+	(EDIT MODE) - Creation of new song files. altering song 	file notes, positions and velocities. Adding removing 	notes. Record notes from selected position, etc.
+	Edit mode should also allow playback from selected 	position for "testing while creating". :)
+     
+	(PLAY MODE) - Song File is not writable, so it can't get 	damaged. Ability to Playback song file with full Drums and 	Song and Playalong volume control. Ability to Record 	 		along with sound file, but saved as "play-along" file. 	Note: this can be cool to play back your recordings to see 	how well you did. 
+
+*Fix GMeter so we can start and stop the global timer.
+
+*Any focusable object that generates more than 1 MouseWheel event needs to be linked to an empty mouse wheel event.
+
+*We need to make sure external hard drives don't mess with Security.h and the Serial coding scheme.
+
+*create a better icon for eTrigger.
+
+*Allow .etd files to save loaded devices on top of what etr.dat 
+loads., if they don't exist on open, just don't load em.
+ The .etd files should take presidence on what devices to load. 
+
+*Add ability to remember piano's size and position.
+
+*Enable dragging the mouse across the piano to work.
+
+*Add Mute and Solo button ability to tracks.
+
+*Give the ablilty to select multiple tracks.
+
+*Set a tab order for all controls
+
+*Set the tooltip for EVERYTHING!!! ;)
+
+*Populate the About Dialog with some info and a cool image.
+
+*Redo the Clear, Next and Finished buttons
+
+*Allow creating a new eTrigger file to Name the project.
+
+*Finnish the border about the panels in TriggerDialog and MidiCCDlg.
+
+*Link PortMidi so eTrigger is capable of selecting from 2 different midi engines. 
+
+*Link RTaudio so eTrigger is capable of selecting from 2 different audio engines.
+
+*Try to push alot of processing that happens outside of classes into the classes they belong in.
+
+*When loading files, check for footer before transfering data, may require a seperate buffer.
+
+*We are using the Idle event in MyFrame to set the wxToolTip::Enabled. Their must be a better way.
+
+*Use Definitions to turn on and off areas of the program. Audio, Midi In / Out, Joystick, etc.
+
+*Put Click image back into all buttons, mainly the tabbed buttons are missing click.
+
+*MidiCC meters need to refresh themselves in the pain event, If we put a window over them, the meter disapears.
+
+*Adding tracks start the midi output note at 36 and increments. Make this increment ignore MidiCC tracks.
+
+*make everything that dosn't need to be a pointer a normal variable.
+
+*The security algorythms needs to run before MyFrame is loaded.
+
+
+NOTES:
+------
+*The very first time eTrigger runs. Last Run Time reports 12/31/1969.
