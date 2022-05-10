@@ -1,0 +1,20 @@
+eTriggerVST.txt
+------------
+
+BUGS-WIN32
+----------
+*The about window dosn't close properly.
+*eTrigger VST dosn't seem to close corretly sometimes.
+
+TODO LIST
+---------
+*We need to link midi input and output to the VST
+
+
+MAC
+---
+Not yet Compiled or tested
+
+LINUX
+-----
+Not yet Compiled or tested
