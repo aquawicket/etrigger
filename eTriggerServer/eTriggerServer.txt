@@ -1,0 +1,13 @@
+eTriggerServer 1.0b
+
+BUGS
+----
+*Sometimes connected pc's close eTrigger and the socket on the server remains open. Need to kill it if duplicate found,
+ use connected time to diconnect old duplicate.
+
+TODO
+----
+*Add "connected time" to info.
+*Add a seperate Thread for transmitions between client.
+*Add variable to track the time each client has been connected.
+*Add variable to track clients version of eTrigger.
